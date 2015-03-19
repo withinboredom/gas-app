@@ -7,3 +7,10 @@
 meteor-platform
 autopublish
 insecure
+coffeescript
+iron:router
+sacha:spin
+twbs:bootstrap
+underscore
+space:cqrs
+withinboredom:sourced

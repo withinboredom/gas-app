@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'eventing',
+    name: 'withinboredom:sourced',
     version: '0.0.1',
     // Brief, one-line summary of the package.
     summary: '',
@@ -10,18 +10,19 @@ Package.describe({
     documentation: 'README.md'
 });
 
+Npm.depends({
+    'boco-sourced': '0.0.5'
+});
+
 Package.onUse(function(api) {
-    api.use('coffeescript');
     api.versionsFrom('METEOR@1.0.3.2');
-    api.addFiles('source/BaseObject.coffee');
-    api.addFiles('source/Aggregate.coffee');
-    api.addFiles('source/Stores/MemoryStore.coffee');
+    api.use('coffeescript');
+    api.addFiles('sourced.coffee');
+    api.addFiles('Sourced-Meteor.coffee');
 });
 
 Package.onTest(function(api) {
-    api.use('practicalmeteor:munit@2.0.2');
-    api.use('coffeescript');
-    api.use('eventing');
-    api.addFiles('tests/aggregateTest.coffee');
-    api.addFiles('tests/storeTest.coffee');
+    api.use('tinytest');
+    api.use('sourced');
+    api.addFiles('sourced-tests.js');
 });

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "boco-sourced": {
+      "version": "0.0.5",
+      "dependencies": {
+        "uuid": {
+          "version": "1.4.2"
+        }
+      }
+    }
+  }
+}

@@ -7,9 +7,12 @@ class @MemoryDispatcher extends BaseObject
 
   SendCommand: (command) ->
     handlers = @Get 'Handlers'
-    if handlers[command?.name]? then handlers[command.name] command else throw "Unable to find handler"
+    if handlers[command?.type]? then handlers[command.type] command else throw "Unable to find handler"
 
     @
 
   PublishEvent: (event) ->
-    
+    subscribers = @Get 'Subscribers'
+    if subscribers[event?.type]?
+      _.each subscribers[event.type], (caller) ->
+        caller event
