@@ -22,7 +22,7 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-    api.use('tinytest');
-    api.use('sourced');
-    api.addFiles('sourced-tests.js');
+    //api.use('tinytest');
+
+    //api.addFiles('sourced-tests.js');
 });
